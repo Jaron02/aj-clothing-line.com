@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AJ's Clothing</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head> 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#131212;
+    --black:#13131a;
+    --bg: radial-gradient(#fff,#ffd6d6);
+    --border:.1rem solid rgb(15, 11, 11);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    color: #131212;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color:rgb(22, 21, 21);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    font-size: 6rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 1.3rem;
+    font-size: 2rem;
+    color:#fff;
+    border-radius: 25px;
+    background: var(--main-color);
+    cursor: pointer;
+}
+ 
+.btn:hover{
+    color: rgb(209, 92, 112);
+   
+}
+
+.header{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    border-radius: 0 0 25px 25px;
+    height: 130px;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 135px;
+    width: 175px;
+}
+.header .navbar1{
+    margin:0 1rem;
+    font-size: 2.5rem;
+    color:black;
+    display: block;
+    padding: 0 15px;
+    text-decoration: none;
+    background-color: whitesmoke;
+    border:var(--border);
+    border-radius: 25px;
+    line-height: 40px;
+    font-size: 25px;
+}
+.header .navbar1 :hover{
+    color: rgb(209, 92, 112);
+}
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 2.5rem;
+    color:black;
+}
+
+.header .navbar a:hover{
+    color: rgb(209, 92, 112);
+    padding-bottom: .5rem;
+}
+.header .navbar ul li{
+    display: block;
+    padding: 0 15px;
+    text-decoration: none;
+    background-color: whitesmoke;
+    border:var(--border);
+    border-radius: 25px;
+    line-height: 40px;
+    font-size: 25px;
+
+}
+.header .navbar ul ul{
+    position: absolute;
+    top: 65px;
+    margin: 1.5%;
+    display: none;
+}
+.header .navbar ul:hover > ul{
+    display: block;
+}
+
+
+.header .icons div{
+    color:black;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+
+.header .icons div:hover{
+    color: rgb(209, 92, 112);
+}
+
+.header .iconss div{
+    color:black;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1rem;
+}
+.header .iconss .menuu{
+    position: absolute;
+    top: 90px;
+    right: 3px;
+    padding: 10px 20px;
+    border: var(--border);
+    background: var(--bg);
+    width: 270px;
+    height: 360 px;
+    box-sizing: 0 5px 25px rgba(0,0,0,1);
+    border-radius: 15px;
+    transition: 0.5%;
+    font-size: 18px;
+    visibility: hidden;
+    opacity: 0;
+}
+.header .iconss .menuu.active{
+    visibility: visible;
+    opacity: 1;
+}
+.header .iconss .menuu .aron img{
+    position: relative;
+   height: 150px;
+   width: 150px;
+   border-radius: 75px;
+   left: 13%;
+   top: 16px;
+}
+
+.header .iconss .menuu h3{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 25px;
+    color: black;
+    line-height: 1.2em;
+}
+.header .iconss .menuu h3 span{
+    font-size: 17px;
+    color: black;
+    font-weight: lighter;
+}
+.header .iconss .menuu ul li{
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgb(197, 191, 191);
+    display: flex;
+    align-items: center;
+}
+.header .iconss .menuu ul li img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5;
+}
+.header .iconss .menuu ul li:hover img{
+    opacity: 1;
+}
+.header .iconss .menuu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5;
+}
+.header .iconss .menuu ul li:hover a{
+    color: rgb(209, 92, 112);
+}
+
+.header .iconss div:hover{
+    color: rgb(209, 92, 112);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: relative;
+    background: #fff;
+    border: var(--border);
+    width: 45rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+   
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container{
+    position: absolute;
+    top:100%; right: -100%;
+    height: 38rem;
+    width: 30rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 25px;
+    border: var(--border);
+    background: var(--bg);
+}
+
+.header .cart-items-container.active{
+    right: 3rem;
+    top: 9rem;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    margin:2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container .cart-item img{
+    height: 7rem;
+    border-radius: 10px;
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 1.3rem;
+    color:var(--black);
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url(images/clothing.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{ 
+    max-width: 45rem;
+}
+
+.home .content h3{
+    font-style: normal;
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: #333;
+}
+
+.home .content p{
+    font-style: italic;
+    font-size: 2.3rem;
+    font-weight: 200;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:whitesmoke;
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.menu .box-container .box{
+    padding:4rem;
+    text-align: center;
+    border:var(--border);    
+}
+
+.menu .box-container .box img{
+    height: 10rem;
+}
+
+.menu .box-container .box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.menu .box-container .box .price{
+    color: #fff;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.menu .box-container .box .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover{
+    background:#fff;
+}
+
+.menu .box-container .box:hover{
+    color:var(--black);
+}
+
+
+.product .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap:1.8rem;
+}
+
+.product .box-container .box{
+    padding:0.5rem;
+    text-align: center;
+    background-color: rgb(173, 161, 161);
+    border:var(--border);
+    border-radius: 25px;    
+}
+
+.product .box-container .box img{
+    height: 20rem;
+    width: 16rem;
+    border: 1px solid black;
+}
+
+.product .box-container .box h3{
+    color: black;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.product .box-container .box .price{
+    color: black;
+    font-size: 2.5rem;
+    padding:.5rem 0;
+}
+
+
+.product .box-container .box .modal{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent .prod-pic{
+    float: left;
+    width: 45%;
+    height: auto;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal2{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal2:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent2{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent2 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent2 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent2 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent2 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent2 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent2 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent2 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent2 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent2 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent2 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent2 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent2 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent2 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent2 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal3{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal3:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent3{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent3 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent3 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent3 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent3 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent3 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent3 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent3 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent3 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent3 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent3 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent3 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent3 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent3 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent3 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal4{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal4:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent4{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent4 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent4 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent4 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent4 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent4 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent4 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent4 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent4 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent4 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent4 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent4 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent4 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent4 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent4 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal5{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal5:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent5{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent5 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent5 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent5 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent5 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent5 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent5 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent5 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent5 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent5 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent5 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent5 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent5 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent5 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent5 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal6{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal6:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent6{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent6 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent6 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent6 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent6 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent6 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent6 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent6 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent6 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent6 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent6 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent6 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent6 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent6 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent6 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal7{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal7:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent7{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent7 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent7 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent7 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent7 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent7 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent7 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent7 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent7 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent7 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent7 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent7 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent7 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent7 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent7 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal8{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal8:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent8{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent8 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent8 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent8 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent8 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent8 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent8 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent8 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent8 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent8 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent8 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent8 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent8 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent8 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent8 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal9{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal9:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent9{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent9 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent9 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent9 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent9 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent9 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent9 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent9 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent9 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent9 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent9 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent9 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent9 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent9 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent9 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+.product .box-container .box .modal10{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(77, 77, 77, 0.7);
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0.3);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+} 
+.product .box-container .box .modal10:target{
+    visibility: visible;
+    opacity: 1;
+
+}
+.product .box-container .box .modalcontent10{
+    position: relative;
+    background: #fff;
+    top: 65px;
+    width: 50%;
+    height: 62.5%;
+    padding: 2em 2em;
+    border-radius: 25px;
+}
+.product .box-container .box a{
+    font-size: 25px;
+    font-weight: 600;
+}
+.product .box-container .box .modalclose{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #585858;
+    text-decoration: none;
+    font-size: 36px;
+}
+.product .box-container .box .modalcontent10 .prod-pic{
+    float: left;
+    width: 45%;
+    height: 97%;
+    display: flex ;
+  
+}
+.product .box-container .box .modalcontent10 .prod-pic img{
+   width: 95%;
+   height: auto;
+   border: 2px solid black;
+}
+.product .box-container .box .modalcontent10 .prod-desc{
+    display: block;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.product .box-container .box .modalcontent10 .prod-desc h2{
+   margin: 0;
+   font-size: 100;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent10 .prod-desc h5{
+   font-weight: lighter;
+   color: #2a2a2a;
+   margin: 0;
+   font-size: 20px;
+   padding-bottom: 5px;
+}
+.product .box-container .box .modalcontent10 .prod-desc h6 {
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent10 .prod-desc h6 a{
+    color: #b1b1b1;
+    font-size: 14px;
+    margin-right: 25px;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+.product .box-container .box .modalcontent10 .pri{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.product .box-container .box .modalcontent10 .pri .oldprice del{
+    font-size: 20px;
+    margin: 0px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent10 .pri .oldprice sup{
+    color: #ff7800;
+    padding-left: 10px;
+}
+.product .box-container .box .modalcontent10 .pri .newprice{
+    font-size: 20px;
+    margin: 0px;
+    color: #333;
+    display: inline-block;
+    width: auto;
+}
+.product .box-container .box .modalcontent10 .pri .newprice abbr{
+    color: #ff7800;
+    padding-left: 3px;
+}
+ .stars i{
+    font-size: 2em;
+    color: rgb(255, 255, 55);
+    margin-bottom: 2%;
+}
+.product .box-container .box .modalcontent10 .prod-desc .buybutton{
+    width: 180px;
+    height: auto;
+    border-radius: 50px;
+    background-color: #ff7800;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product .box-container .box .modalcontent10 .prod-desc .buybutton:hover{
+    color: gray;
+}
+.product .box-container .box:hover{
+    background:#fff;
+} 
+
+
+
+.footer{
+    background:var(--black);
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem ;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    border:var(--border);
+    margin:.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: rgba(255, 255, 255, 0.459);
+}
+
+
+.footer .links a{
+    padding:.7rem 2rem;
+    color:#fff;
+    border:var(--border);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background: var(--main-color);
+}
+
+.footer .credit{
+    font-size: 2.5rem;
+    color:#fff;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color: greenyellow;
+}
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active{
+        right:0;
+    }
+
+    .header .navbar a{
+        color:var(--black);
+        display: block;
+        margin:1.5rem;
+        padding:.5rem;
+        font-size: 2rem;
+    }
+
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+    .home .content p{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+</style>
+    
+<body>
+    <header class="header">
+    
+        <a href="#" class="logo">
+            <img src="images/1-removebg-preview.png" alt="">
+        </a>
+        
+        <nav class="navbar1">
+            <a href="#product">Products</a>
+        </nav>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Categories</a></li>
+                <ul>
+                    <li><a href="#product">Tees</a></li>
+                    <li><a href="dress.html">Dress</a></li>
+                    
+                </ul>
+                
+            </ul>
+        </nav>
+    
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <div class="icons">
+            <div class="" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="iconss">
+            <div class="fas fa-user" onclick="menuToggle();" id="user-btn"></div>
+            <div class="menuu">
+                <div class="aron"><img src="images/aron.jpg"></div>
+                <h3>Aron Jumawan  <span> Website Designer</span> </h3>
+                <ul>
+                    <li><img src="images/user.png"><a href="#">My Profile</a></li>
+                    <li><img src="images/edit.png"><a href="#">Edit Profile</a></li>
+                    <li><img src="images/inbox.png"><a href="#">Inbox</a></li>
+                    <li><img src="images/settings.png"><a href="#">Settings</a></li>
+                    <li><img src="images/help.png"><a href="#">Help</a></li>
+                    <li><img src="images/logout.png"><a href="#">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            function menuToggle(){
+                const toggleMenu = document.querySelector('.menuu');
+                toggleMenu.classList.toggle('active')
+            }
+        </script>
+    
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="images/item1(1).jpg" alt="">
+                <div class="content">
+                    <h3>Fearless Unisex T-shirt</h3>
+                    <div class="price">php 250.00/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="images/item2 (2).jpg" alt="">
+                <div class="content">
+                    <h3>Peke sa Tunay Unisex T-shirt</h3>
+                    <div class="price">php 250.00/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="images/item3.jpg" alt="">
+                <div class="content">
+                    <h3>The Purge Unisex T-shirt</h3>
+                    <div class="price">php 350.00/-</div>
+                </div>
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+    
+    </header>
+    
+    <section class="home" id="home">
+    
+        <div class="content">
+            <h3>Fashion as unique as you are</h3>
+            <p>Here at AJ's Clothing we offer you the best clothes that will make you stand out.</p>
+            
+        </div>
+    
+    </section>
+    
+<section class="product" id="product">
+    <h1 class="heading">My <span>Products</span> </h1>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/item1(1).jpg" alt="">
+            <h3>Fearless Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 250.00 </div>
+            <h4><a href="#modalbox" class="btn">view details</a></h4>
+            <div id="modalbox" class="modal">
+            <div class="modalcontent">
+                <div class="prod-pic">
+                    <img src="images/item1(1).jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Fearless Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">7 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 350</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 250 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item2 (2).jpg" alt="">
+            <h3>Peke sa Tunay Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 250.00 </div>
+            <h4><a href="#modalbox2" class="btn">view details</a></h4>
+            <div id="modalbox2" class="modal2">
+            <div class="modalcontent2">
+                <div class="prod-pic">
+                    <img src="images/item2 (2).jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Peke sa Tunay Unisex T-shirt </h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">4 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 450</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 250 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item3.jpg" alt="">
+            <h3>The Purge Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 350.00 </div>
+            <h4><a href="#modalbox3" class="btn">view details</a></h4>
+            <div id="modalbox3" class="modal3">
+            <div class="modalcontent3">
+                <div class="prod-pic">
+                    <img src="images/item3.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>The Purge Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">10 review</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 600</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 350 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item4.jpg" alt="">
+            <h3>Payaman Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 400.00 </div>
+            <h4><a href="#modalbox4" class="btn">view details</a></h4>
+            <div id="modalbox4" class="modal4">
+            <div class="modalcontent4">
+                <div class="prod-pic">
+                    <img src="images/item4.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Payaman Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">96 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 700</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 400 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item5.jpg" alt="">
+            <h3>G na G Unisex Large T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 150.00 </div>
+            <h4><a href="#modalbox5" class="btn">view details</a></h4>
+            <div id="modalbox5" class="modal5">
+            <div class="modalcontent5">
+                <div class="prod-pic">
+                    <img src="images/item5.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>G na G Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">52 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 250</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 150 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item6.jpg" alt="">
+            <h3>Wisemind Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 200.00 </div>
+            <h4><a href="#modalbox6" class="btn">view details</a></h4>
+            <div id="modalbox6" class="modal6">
+            <div class="modalcontent6">
+                <div class="prod-pic">
+                    <img src="images/item6.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Wisemind Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">230 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 240</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 200 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item7.jpg" alt="">
+            <h3>Batang 90's Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 350.00 </div>
+            <h4><a href="#modalbox7" class="btn">view details</a></h4>
+            <div id="modalbox7" class="modal7">
+            <div class="modalcontent7">
+                <div class="prod-pic">
+                    <img src="images/item7.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Batang 90's Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">200 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 400</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 350 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item8.jpg" alt="">
+            <h3>Simplicity Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 250.00 </div>
+            <h4><a href="#modalbox8" class="btn">view details</a></h4>
+            <div id="modalbox8" class="modal8">
+            <div class="modalcontent8">
+                <div class="prod-pic">
+                    <img src="images/item8.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Simplicity Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">40 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 280</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 250 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item9.jpg" alt="">
+            <h3>Stay Paid Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 299.00 </div>
+            <h4><a href="#modalbox9" class="btn">view details</a></h4>
+            <div id="modalbox9" class="modal9">
+            <div class="modalcontent9">
+                <div class="prod-pic">
+                    <img src="images/item9.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Stay Paid Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">60 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 320</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 299 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <img src="images/item10.jpg" alt="">
+            <h3>Monster Unisex T-shirt</h3>
+            <h1>AJ's Clothing Line</h1>
+            <div class="price">php 250.00 </div>
+            <h4><a href="#modalbox10" class="btn">view details</a></h4>
+            <div id="modalbox10" class="modal10">
+            <div class="modalcontent10">
+                <div class="prod-pic">
+                    <img src="images/item10.jpg">
+                </div>
+                <div class="prod-desc">
+                    <h2>Monster Unisex T-shirt</h2>
+                    <h5>Product Brand : Philippines</h5>
+                    <h6><a href="#">130 reviews</a> <a href="#">View all reviews</a></h6>
+                    <div class="pri">
+                        <h4 class="oldprice"><del>Rs. 320</del><sup>25% OFF</sup></h4>
+                        <h4 class="newprice">Rs. 250 + <abbr>99 Shipping</abbr></h4>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <a href="#cart" class="buybutton">Click to Buy</a>
+                    <p><b>Warranty :</b> 1 day seller replacement waranty against manufacturing defects.</p>
+                    <p><b>Shipping :</b> Dispatched within 2-3 working days.</p>
+                </div>
+                <a href="#product" class="modalclose">&times;</a>
+            </div>
+        </div>
+        </div>
+       
+    </div>
+</section>
+
+<section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
+        <div class="credit">created By <span> Joseph Aaron Jumawan </span>  | all rights reserved:</div>
+    </section>
+    <script src="js/script.js"></script>
+    
+    </body>
+</html>
